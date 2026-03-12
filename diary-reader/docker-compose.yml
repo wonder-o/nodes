@@ -1,0 +1,16 @@
+version: '3.8'
+
+services:
+  daily-diary:
+    build: .
+    container_name: daily-diary
+    ports:
+      - "3000:3000"
+    volumes:
+      # 挂载日志目录到容器
+      - /home/wonder/.openclaw/workspace/daily-diary:/app/data
+    environment:
+      - NODE_ENV=production
+    restart: unless-stopped
+    stdin_open: true
+    tty: true

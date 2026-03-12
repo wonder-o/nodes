@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Daily Diary Reader</title>
+    <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+    <header>
+        <h1>📝 Daily Diary Reader</h1>
+        <div class="search-box">
+            <input type="text" id="searchInput" placeholder="🔍 搜索日志..." oninput="handleSearch(event)">
+            <button id="themeToggle" onclick="toggleTheme()">🌓</button>
+        </div>
+    </header>
+
+    <main>
+        <div id="loading" class="hidden">
+            <p>⏳ 加载中...</p>
+        </div>
+
+        <div id="diaryList" class="diary-list">
+            <!-- 日记列表将动态加载 -->
+        </div>
+
+        <div id="diaryContent" class="diary-content hidden">
+            <div class="content-header">
+                <button onclick="closeDiary()">✕ 关闭</button>
+                <h2 id="diaryTitle"></h2>
+            </div>
+            <div id="diaryBody" class="diary-body">
+                <!-- 日记内容 -->
+            </div>
+        </div>
+    </main>
+
+    <script src="/app.js"></script>
+</body>
+</html>
